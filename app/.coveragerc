@@ -1,0 +1,9 @@
+[report]
+skip_covered = True
+
+omit =
+    main.py
+    exceptions/*.py
+    core/logger/*.py
+    core/config.py
+    tests/utils.py

@@ -1,0 +1,39 @@
+name: py-ci
+
+on:
+  push:
+    paths:
+      - 'app/**'
+      - '.github/workflows/py-ci.yml'
+
+jobs:
+  py-ci:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
+      ENV: 'local'
+    defaults:
+      run:
+        working-directory: app
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: install packages
+        run: |
+            python -m pip install --upgrade pip
+            pip install poetry
+            poetry install
+      - name: run lint mypy
+        run: poetry run mypy --explicit-package-bases .
+      - name: run lint ruff
+        run: poetry run ruff check .
+      - name: run lint black
+        run: poetry run black --check .
+      - name: run tests
+        run: |
+            python3 -m poetry run pytest tests
