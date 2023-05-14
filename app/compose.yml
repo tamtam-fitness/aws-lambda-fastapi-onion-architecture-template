@@ -1,0 +1,43 @@
+version: '3'
+
+# mutagen-comopseを使用 ref: https://tech.enigmo.co.jp/entry/2021/12/22/100000a
+x-mutagen:
+  sync:
+    mutagen:
+      mode: "two-way-resolved" # 同期モード指定（ホスト　↔　コンテナ　双方を同期）
+      alpha: "." # プロジェクトのパス
+      beta: "volume://mutagen-app-volume" # volumeの指定
+
+volumes:
+  mutagen-app-volume:
+
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - mutagen-app-volume:/var/task:delegated
+    environment:
+      ENV: "local"
+      PYTHONPATH: '/var/task'
+      OPEN_AI_API_KEY: 'dummy'
+    working_dir: '/var/task'
+    tty: true
+    stdin_open: true
+    entrypoint: ''
+    command: "poetry run uvicorn main:app --reload --host 0.0.0.0"
+    ports:
+        - "8000:8000"
+  dozzle:
+    container_name: dozzle
+    image: amir20/dozzle:latest
+    environment:
+      DOZZLE_TAILSIZE: 100
+      DOZZLE_FILTER: status=running
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "9999:8080"

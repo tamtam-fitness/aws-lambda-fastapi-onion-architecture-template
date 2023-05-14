@@ -1,0 +1,7 @@
+FROM public.ecr.aws/lambda/python:3.9
+
+COPY ./ /var/task
+WORKDIR /var/task
+
+RUN pip install poetry
+RUN poetry install

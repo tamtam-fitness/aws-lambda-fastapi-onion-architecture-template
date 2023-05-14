@@ -1,1 +1,1 @@
-# aws-lambda-fastapi-template
+# aws-lambda-fastapi-onion-architecture-template
