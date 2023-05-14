@@ -2,7 +2,10 @@ from injector import Binder, Module
 
 import infrastructure.repository.english_word as impl
 from domain.english_word.i_image_repository import IImageCacheRepo, IImageOriginRepo
-from domain.english_word.i_meaning_repository import IMeaningCacheRepo, IMeaningOriginRepo
+from domain.english_word.i_meaning_repository import (
+    IMeaningCacheRepo,
+    IMeaningOriginRepo,
+)
 
 
 class RepositoryModule(Module):

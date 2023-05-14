@@ -6,7 +6,6 @@ from schemas.english_word import MeaningGet, MeaningGetResponse
 
 
 class GetMeaningUseCase:
-
     @inject
     def __init__(self, meaning_repository: IMeaningOriginRepo) -> None:
         self.__meaning_repository = meaning_repository

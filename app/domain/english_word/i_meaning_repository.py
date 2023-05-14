@@ -8,6 +8,7 @@ class IMeaningCacheRepo(metaclass=ABCMeta):
     def get(self, english_word: EnglishWord) -> str:
         raise NotImplementedError()
 
+
 class IMeaningOriginRepo(metaclass=ABCMeta):
     @abstractmethod
     def get(self, english_word: EnglishWord) -> str:

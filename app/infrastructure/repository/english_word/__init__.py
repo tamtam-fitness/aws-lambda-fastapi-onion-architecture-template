@@ -7,5 +7,5 @@ __all__ = [
     "ImageOpenAIRepositoryImpl",
     "ImageS3RepositoryImpl",
     "MeaningDynamodbRepositoryImpl",
-    "MeaningOpenAIRepositoryImpl"
+    "MeaningOpenAIRepositoryImpl",
 ]

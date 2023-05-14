@@ -2,7 +2,7 @@ class Singleton:
     _unique_instance = None
 
     @classmethod
-    def instance(cls) -> object :
+    def instance(cls) -> object:
         if cls._unique_instance is None:
             cls._unique_instance = cls()
         return cls._unique_instance

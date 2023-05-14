@@ -10,7 +10,6 @@ class GetImageUseCase:
     def __init__(self, image_repository: IImageOriginRepo) -> None:
         self.__image_repository = image_repository
 
-
     def handle(self, image_get: ImageGet) -> ImageGetResponse:
         english_word = EnglishWord(value=image_get.english_word)
         image_url = self.__image_repository.get(english_word)

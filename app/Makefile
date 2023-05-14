@@ -8,6 +8,7 @@ test:
 lint:
 	docker-compose exec app poetry run mypy --explicit-package-bases .
 	docker-compose exec app poetry run ruff check .
+	docker-compose exec app poetry run black --check .
 
 format:
 	docker-compose exec app poetry run ruff check . --fix --exit-non-zero-on-fix
