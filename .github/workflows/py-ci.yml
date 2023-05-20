@@ -12,7 +12,8 @@ jobs:
     defaults:
       run:
         working-directory: app
-
+      env:
+        PYTHONPATH: .
     steps:
       - name: checkout
         uses: actions/checkout@v3
