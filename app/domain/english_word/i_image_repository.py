@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-from domain.english_word.value_object import EnglishWord
+from domain.english_word.english_word import EnglishWord
 
 
 class IImageCacheRepo(metaclass=ABCMeta):

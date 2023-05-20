@@ -9,10 +9,6 @@ on:
 jobs:
   py-ci:
     runs-on: ubuntu-latest
-    env:
-      PYTHONPATH: .
-      ENV: 'test'
-      OPEN_AI_API_KEY: 'dummy'
     defaults:
       run:
         working-directory: app

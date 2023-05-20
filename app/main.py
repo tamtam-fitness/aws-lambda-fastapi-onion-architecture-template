@@ -21,7 +21,7 @@ app.include_router(v1_router, prefix="/v1")
 
 # ref: https://docs.sentry.io/platforms/python/guides/logging/
 sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERROR)
-if settings.SENTRY_DSN:
+if settings.ENV not in ["local", "test"]:
     sentry_sdk.init(
         dsn=settings.SENTRY_DSN,
         integrations=[sentry_logging],
