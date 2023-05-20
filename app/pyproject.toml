@@ -25,6 +25,7 @@ pytest-cov = "^4.0.0"
 pytest-mock = "^3.10.0"
 mypy = "^1.2.0"
 ruff = "^0.0.265"
+pytest-env = "^0.8.1"
 
 [tool.ruff]
 # Same as Black.
