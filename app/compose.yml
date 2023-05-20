@@ -20,10 +20,6 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - mutagen-app-volume:/var/task:delegated
-    environment:
-      ENV: "local"
-      PYTHONPATH: '/var/task'
-      OPEN_AI_API_KEY: 'dummy'
     working_dir: '/var/task'
     tty: true
     stdin_open: true

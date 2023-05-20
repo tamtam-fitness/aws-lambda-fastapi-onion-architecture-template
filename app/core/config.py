@@ -1,6 +1,8 @@
+import os
 from typing import Union
 
-from pydantic import BaseSettings, HttpUrl, validator
+import yaml
+from pydantic import BaseSettings, HttpUrl
 
 
 # ref: https://qiita.com/ninomiyt/items/ee676d7f9b780b1d44e8
@@ -9,17 +11,21 @@ class Settings(BaseSettings):
     SENTRY_DSN: Union[
         HttpUrl,
         None,
-    ] = "https://fa15f4da6f7f4adbb2009a1c0f956625@o29226.ingest.sentry.io/4504988107210752"
+    ]
     ENV: Union[str, None] = None
-
-    @validator("SENTRY_DSN", pre=True)
-    def sentry_dsn_can_be_blank(cls, v: str) -> Union[str, None]:
-        if len(v) == 0:
-            return None
-        return v
 
     class Config:
         case_sensitive = True
 
 
-settings = Settings()
+# YAMLをロードする
+# https://gist.github.com/ericvenarusso/dcaefd5495230a33ef2eb2bdca262011
+def read_yaml(file_path: str) -> Settings:
+    with open(file_path) as stream:
+        config = yaml.safe_load(stream)
+
+    return Settings(**config)
+
+
+env = os.environ["ENV"]
+settings = read_yaml(f"{os.getcwd()}/core/yaml_configs/{env}.yaml")
