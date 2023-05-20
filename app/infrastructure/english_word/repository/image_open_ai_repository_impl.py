@@ -1,5 +1,5 @@
+from domain.english_word.english_word import EnglishWord
 from domain.english_word.i_image_repository import IImageOriginRepo
-from domain.english_word.value_object import EnglishWord
 
 
 class ImageOpenAIRepositoryImpl(IImageOriginRepo):

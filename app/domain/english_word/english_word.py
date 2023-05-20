@@ -1,11 +1,11 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, validator
 
 from exceptions.core import APIException
 from exceptions.error_messages import ErrorMessage
 
 
 class EnglishWord(BaseModel, frozen=True):  # type: ignore
-    value: str = Field(max_length=20)
+    value: str
 
     @validator("value")
     def is_english(cls, v: str) -> str:

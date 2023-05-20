@@ -1,5 +1,5 @@
+from domain.english_word.english_word import EnglishWord
 from domain.english_word.i_meaning_repository import IMeaningCacheRepo
-from domain.english_word.value_object import EnglishWord
 
 
 class MeaningDynamodbRepositoryImpl(IMeaningCacheRepo):

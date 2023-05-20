@@ -1,7 +1,7 @@
 from injector import inject
 
+from domain.english_word.english_word import EnglishWord
 from domain.english_word.i_meaning_repository import IMeaningOriginRepo
-from domain.english_word.value_object import EnglishWord
 from schemas.english_word import MeaningGet, MeaningGetResponse
 
 

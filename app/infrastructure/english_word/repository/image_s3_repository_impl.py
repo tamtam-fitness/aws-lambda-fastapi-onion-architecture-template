@@ -1,5 +1,5 @@
+from domain.english_word.english_word import EnglishWord
 from domain.english_word.i_image_repository import IImageCacheRepo
-from domain.english_word.value_object import EnglishWord
 
 
 class ImageS3RepositoryImpl(IImageCacheRepo):
