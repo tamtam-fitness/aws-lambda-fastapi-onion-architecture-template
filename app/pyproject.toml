@@ -6,7 +6,7 @@ authors = ["your_name"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 fastapi = "^0.95.1"
 mangum = "^0.17.0"
 httpx = "^0.24.0"
@@ -76,7 +76,7 @@ line-length = 115
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 # Assume Python 3.10.
-target-version = "py39"
+target-version = "py310"
 
 [build-system]
 requires = ["poetry-core"]
