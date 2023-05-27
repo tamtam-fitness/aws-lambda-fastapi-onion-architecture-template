@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.9
+FROM public.ecr.aws/lambda/python:3.10
 RUN pip install poetry
 COPY pyproject.toml poetry.lock ./
 
