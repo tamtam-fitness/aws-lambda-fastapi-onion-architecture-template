@@ -1,4 +1,4 @@
-from typing import Any, Union
+from typing import Any
 
 from fastapi import HTTPException, status
 
@@ -16,7 +16,7 @@ class APIException(HTTPException):
         self,
         error: Any,
         status_code: int = default_status_code,
-        headers: Union[dict[str, Any], None] = None,
+        headers: dict[str, Any] | None = None,
     ) -> None:
         self.headers = headers
         try:

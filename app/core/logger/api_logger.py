@@ -22,8 +22,8 @@ class ApiLogger:
         cls._get_logger().warning(object_or_message)
 
     @classmethod
-    def error(cls, object_or_message: Any) -> None:
-        cls._get_logger().error(object_or_message)
+    def error(cls, object_or_message: Any, exec_info: bool = False) -> None:
+        cls._get_logger().error(object_or_message, exc_info=exec_info)
 
     @classmethod
     def _get_logger(cls) -> logging.Logger:
