@@ -1,4 +1,4 @@
-from typing import Any, Union
+from typing import Any
 
 from starlette import status
 
@@ -12,7 +12,7 @@ class BaseMessage:
     text: str
     status_code: int = status.HTTP_400_BAD_REQUEST
 
-    def __init__(self, param: Union[Any, None] = None) -> None:
+    def __init__(self, param: Any | None = None) -> None:
         self.param = param
 
     def __str__(self) -> str:

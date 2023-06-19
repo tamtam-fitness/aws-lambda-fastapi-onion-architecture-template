@@ -1,5 +1,4 @@
 import os
-from typing import Union
 
 import yaml
 from pydantic import BaseSettings, HttpUrl
@@ -8,11 +7,8 @@ from pydantic import BaseSettings, HttpUrl
 # ref: https://qiita.com/ninomiyt/items/ee676d7f9b780b1d44e8
 class Settings(BaseSettings):
     OPEN_AI_API_KEY: str
-    SENTRY_DSN: Union[
-        HttpUrl,
-        None,
-    ]
-    ENV: Union[str, None] = None
+    SENTRY_DSN: HttpUrl | None
+    ENV: str | None = None
 
     class Config:
         case_sensitive = True

@@ -21,6 +21,8 @@ services:
     volumes:
       - mutagen-app-volume:/var/task:delegated
     working_dir: '/var/task'
+    environment:
+      - PYTHONPATH=/var/task
     tty: true
     stdin_open: true
     entrypoint: ''
