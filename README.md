@@ -78,3 +78,4 @@ run container following [app/README](app/README.md) .
 - [iktakahiro/dddpy](https://github.com/iktakahiro/dddpy)
 - [tiangolo/full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql)
 - [takashi-yoneya/fastapi-mybest-template](https://github.com/takashi-yoneya/fastapi-mybest-template)
+- https://zenn.dev/shimo_s3/articles/4332b2a9648746
