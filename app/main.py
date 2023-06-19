@@ -4,6 +4,7 @@ from typing import Any
 import sentry_sdk
 from fastapi import FastAPI
 from mangum import Mangum
+from sentry_sdk.integrations.fastapi import FastApiIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
 
 from api.v1 import v1_router
@@ -24,7 +25,7 @@ sentry_logging = LoggingIntegration(level=logging.INFO, event_level=logging.ERRO
 if settings.ENV not in ["local", "test"]:
     sentry_sdk.init(
         dsn=settings.SENTRY_DSN,
-        integrations=[sentry_logging],
+        integrations=[sentry_logging, FastApiIntegration(transaction_style="endpoint")],
         environment=settings.ENV,
         traces_sample_rate=1.0,
     )

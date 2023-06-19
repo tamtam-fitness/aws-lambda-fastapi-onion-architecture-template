@@ -30,6 +30,6 @@ class ErrorHandlingMiddleware(BaseHTTPMiddleware):
                     "error_msg": "エラーが発生しました、システム管理者に問い合わせてください",
                 },
             )
-            ApiLogger.error(response)
+            ApiLogger.error(response, exec_info=True)
 
         return response
