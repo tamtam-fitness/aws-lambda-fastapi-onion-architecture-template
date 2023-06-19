@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mutagen-compose down
+mutagen-compose build
+mutagen-compose up -d
