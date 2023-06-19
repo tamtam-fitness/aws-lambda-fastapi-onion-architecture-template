@@ -1,3 +1,4 @@
 #!/bin/bash
 
 docker exec app python3 -m poetry run pytest $1 --cov=/var/task --cov-report term-missing
+
