@@ -5,7 +5,7 @@ This is a template for creating a FastAPI application with Onion Architecture an
 Here are the URLs of the articles I wrote based on this repository.
 - [【全2回】AWS Lambda x FastAPIによるPythonモダンAPI開発のすゝめ 1](https://techblog.raksul.com/entry/2023/06/30/081048)(written in Japanese)
 - [【全2回】AWS Lambda x FastAPIによるPythonモダンAPI開発のすゝめ 2](https://techblog.raksul.com/entry/2023/06/30/142904)(written in Japanese)
-https://techblog.raksul.com/entry/2023/06/30/142904
+
 ## project structure
 this is a project structure image in app directory.
 ※ different from the actual project structure
